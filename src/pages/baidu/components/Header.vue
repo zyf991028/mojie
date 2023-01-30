@@ -34,7 +34,6 @@ const loginUrl =
   "https://passport.baidu.com/v2/?login&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F&sms=5";
 
 const navigate = (src) => {
-  console.log(src);
   window.open(src, "__BLANK");
 };
 </script>
