@@ -1,64 +1,68 @@
-<script setup>
-const srca = [
-  {
-    link: "https://www.baidu.com",
-  },
-];
-const imgs = (src) => {
-  window.open(src, "__BLANK");
-};
-</script>
+<script setup></script>
 
 <template>
   <div class="middle">
-    <div class="logo" v-for="srcs in srca" @click="imgs(srcs.link)">
-      {{ srcs.title }}
-      <img
-        src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png"
-        alt=""
-      />
+    <img
+      class="logo"
+      src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png"
+      alt="logo"
+    />
+
+    <div class="search-input">
+      <input class="input" type="text" />
+      <div class="search-button">百度一下</div>
     </div>
-    <div class="inputs"><button>百度一下</button></div>
   </div>
 </template>
 
 <style scoped lang="less">
 .middle {
   width: 100%;
-  height: 250px;
-  position: absolute;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   .logo {
     width: 270px;
     height: 129px;
-    display: flex;
-    margin: auto;
     cursor: pointer;
   }
-  .inputs {
-    position: relative;
-    left: 25%;
-    top: 10%;
-    width: 443px;
-    height: 16px;
-    padding: 12px 16px;
-    border-radius: 10px 0 0 10px;
-    border: 2px solid #c4c7ce;
+
+  .search-input {
     display: flex;
-    text-align: center;
-  }
-  .inputs button {
-    position: relative;
-    left: 104%;
-    top: -88%;
-    cursor: pointer;
-    width: 120px;
-    height: 44px;
-    line-height: 44px;
-    background-color: #4e6ef2;
-    border-radius: 0 10px 10px 0;
-    border: 2px solid #c4c7ce;
-    font-size: 17px;
-    color: #fff;
+    margin-top: 20px;
+
+    .input {
+      width: 550px;
+      height: 44px;
+      border-radius: 10px 0 0 10px;
+      border: 2px solid #c4c7ce;
+      padding: 0px;
+      border-right: 0px;
+      outline: none;
+
+      &:hover {
+        border-color: #4e6ef2;
+      }
+    }
+
+    .search-button {
+      cursor: pointer;
+      width: 130px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #4e6ef2;
+      border-radius: 0 10px 10px 0;
+      font-size: 17px;
+      color: #fff;
+
+      &:hover {
+        background-color: fade(#4e6ef2, 80);
+      }
+    }
   }
 }
 </style>
