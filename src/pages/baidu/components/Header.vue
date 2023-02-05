@@ -100,6 +100,13 @@ const navigate = (src) => {
     .content {
       display: none;
       position: absolute;
+      right: 70px;
+      background-color: #fff;
+      box-shadow: 0 0 10px #d7d9e0;
+      color: #333;
+      width: 84px;
+      text-align: center;
+      border-radius: 12px;
     }
 
     .content a {
