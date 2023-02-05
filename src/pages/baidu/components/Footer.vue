@@ -1,5 +1,5 @@
 <script setup>
-const under = [
+const links = [
   {
     link: "https://home.baidu.com/",
     title: "关于百度",
@@ -40,8 +40,12 @@ const opens = (src) => {
 
 <template>
   <div class="footer">
-    <div class="footers" v-for="up in under" @click="opens(up.link)">
-      {{ up.title }}
+    <div
+      class="footers"
+      v-for="linkItem in links"
+      @click="opens(linkItem.link)"
+    >
+      {{ linkItem.title }}
     </div>
   </div>
 </template>
@@ -49,17 +53,16 @@ const opens = (src) => {
 <style scoped lang="less">
 .footer {
   width: 100%;
-  height: 30px;
+  height: 40px;
+  line-height: 40px;
   position: fixed;
   bottom: 0;
   display: flex;
+  justify-content: space-evenly;
   cursor: pointer;
-  text-align: center;
+  font-size: 14px;
   .footers {
     color: #9195a3;
-    float: left;
-    font-size: 12px;
-    margin-left: 50px;
   }
   .footers:hover {
     color: #000;
