@@ -41,8 +41,13 @@
       padding: 0px;
       border-right: 0px;
       outline: none;
+      text-indent: 10px;
 
       &:hover {
+        border-color: fade(#c4c7ce, 80);
+      }
+
+      &:focus {
         border-color: #4e6ef2;
       }
     }
