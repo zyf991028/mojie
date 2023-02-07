@@ -1,5 +1,7 @@
 <script setup>
-const news = [
+import { reactive, nextTick } from "vue";
+
+const originNews = [
   {
     link: "#",
     title: "春节临近 各种多措并举保供稳价",
@@ -25,6 +27,18 @@ const news = [
     title: "尼泊尔坠机现场已找到30具遗体",
   },
 ];
+
+const state = reactive({ news: [], show: false });
+
+setTimeout(() => {
+  state.news.push(...originNews);
+  state.show = true;
+
+  nextTick(() => {
+    console.log(document.getElementById("element"));
+  });
+}, 2000);
+
 const navigate = (src) => {
   window.open(src, "__BLANK");
 };
@@ -40,12 +54,14 @@ const navigate = (src) => {
     <div class="news-content">
       <div
         class="news-link"
-        v-for="(newItem, index) in news"
+        v-for="(newItem, index) in state.news"
         @click="navigate(newItem.link)"
       >
         {{ index + 1 }}. {{ newItem.title }}>
       </div>
     </div>
+
+    <div v-if="state.show" id="element">element</div>
   </div>
 </template>
 
